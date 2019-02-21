@@ -1,0 +1,644 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.30.1.41636 for 8051            15/Oct/2017  11:48:33 /
+// Copyright 2004-2013 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  D:\简宝山\寿县17-09-01 25\程序\无线节点程序\code\ /
+//                          Projects\zstack\Samples\SampleApp\Source\hardware /
+//                          \spi.c                                            /
+//    Command line       =  -f "D:\简宝山\寿县17-09-01                        /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEn /
+//                          dev.cfg" (-DCPU32MHZ -DROOT=__near_func           /
+//                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6        /
+//                          -DMAC_CFG_RX_MAX=3) -f "D:\简宝山\寿县17-09-01    /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wCo /
+//                          nfig.cfg" (-DZIGBEEPRO -DSECURE=0                 /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DDEFAULT_CHANLIST=0x00000800                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 "D:\简宝山\寿县17-09-01    /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\Source\hardware\spi.c" -D              /
+//                          NWK_AUTO_POLL -D ZTOOL_P1 -D xMT_TASK -D          /
+//                          xMT_SYS_FUNC -D xMT_ZDO_FUNC -D                   /
+//                          xLCD_SUPPORTED=DEBUG -lC "D:\简宝山\寿县17-09-01  /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\EndDeviceEB\List\" -lA        /
+//                          "D:\简宝山\寿县17-09-01                           /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\EndDeviceEB\List\"            /
+//                          --diag_suppress Pe001,Pa010 -o                    /
+//                          "D:\简宝山\寿县17-09-01                           /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\EndDeviceEB\Obj\" -e          /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 8 -I "D:\简宝山\寿县17-09-01    /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\" -I "D:\简宝山\寿县17-09-01  /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\Source\" -I                /
+//                          "D:\简宝山\寿县17-09-01                           /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\Source\hardware\" -I       /
+//                          "D:\简宝山\寿县17-09-01                           /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\ZMain\TI2530DB\" -I  /
+//                          "D:\简宝山\寿县17-09-01                           /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\Components\hal /
+//                          \include\" -I "D:\简宝山\寿县17-09-01             /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\Components\hal /
+//                          \target\CC2530EB\" -I "D:\简宝山\寿县17-09-01     /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\Components\mac /
+//                          \include\" -I "D:\简宝山\寿县17-09-01             /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\Components\mac /
+//                          \high_level\" -I "D:\简宝山\寿县17-09-01          /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\Components\mac /
+//                          \low_level\srf04\" -I "D:\简宝山\寿县17-09-01     /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\Components\mac /
+//                          \low_level\srf04\single_chip\" -I                 /
+//                          "D:\简宝山\寿县17-09-01                           /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\Components\mt\ /
+//                          " -I "D:\简宝山\寿县17-09-01                      /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\Components\osa /
+//                          l\include\" -I "D:\简宝山\寿县17-09-01            /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\Components\ser /
+//                          vices\saddr\" -I "D:\简宝山\寿县17-09-01          /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\Components\ser /
+//                          vices\sdata\" -I "D:\简宝山\寿县17-09-01          /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\Components\sta /
+//                          ck\af\" -I "D:\简宝山\寿县17-09-01                /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\Components\sta /
+//                          ck\nwk\" -I "D:\简宝山\寿县17-09-01               /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\Components\sta /
+//                          ck\sapi\" -I "D:\简宝山\寿县17-09-01              /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\Components\sta /
+//                          ck\sec\" -I "D:\简宝山\寿县17-09-01               /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\Components\sta /
+//                          ck\sys\" -I "D:\简宝山\寿县17-09-01               /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\Components\sta /
+//                          ck\zdo\" -I "D:\简宝山\寿县17-09-01               /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\Components\zma /
+//                          c\" -I "D:\简宝山\寿县17-09-01                    /
+//                          25\程序\无线节点程序\code\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\Components\zma /
+//                          c\f8w\" -Ohz --require_prototypes                 /
+//    List file          =  D:\简宝山\寿县17-09-01 25\程序\无线节点程序\code\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\EndDev /
+//                          iceEB\List\spi.s51                                /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME spi
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?V0
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+
+        PUBLIC ??SPI1_Init?relay
+        FUNCTION ??SPI1_Init?relay,0203H
+        PUBLIC ??SPI1_ReadWriteByte?relay
+        FUNCTION ??SPI1_ReadWriteByte?relay,0203H
+        PUBLIC ??SPI1_SetSpeed?relay
+        FUNCTION ??SPI1_SetSpeed?relay,0203H
+        PUBWEAK P1SEL
+        PUBWEAK P2SEL
+        PUBWEAK PERCFG
+        PUBLIC SPI1_Init
+        FUNCTION SPI1_Init,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC SPI1_ReadWriteByte
+        FUNCTION SPI1_ReadWriteByte,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC SPI1_SetSpeed
+        FUNCTION SPI1_SetSpeed,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBWEAK U1BAUD
+        PUBWEAK U1DBUF
+        PUBWEAK U1GCR
+        PUBWEAK U1UCR
+        PUBWEAK _A_IRCON2
+        PUBWEAK _A_U1CSR
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA_SP SP IDATA
+          CFI StackFrame CFA_PSP16 PSP16 XDATA
+          CFI StackFrame CFA_XSP16 XSP16 XDATA
+          CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+          CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+          CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+          CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+          CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+          CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+          CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+          CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+          CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+          CFI VirtualResource ?RET:24
+          CFI Resource ?BRET_EXT:8
+          CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+          CFI ResourceParts PSP16 PSPH, PSPL
+          CFI ResourceParts XSP16 XSPH, XSPL
+          CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-3
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B Undefined
+          CFI A Undefined
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 Undefined
+          CFI R1 Undefined
+          CFI R2 Undefined
+          CFI R3 Undefined
+          CFI R4 Undefined
+          CFI R5 Undefined
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?BRET_EXT Frame(CFA_SP, 3)
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-2
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B SameValue
+          CFI A SameValue
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 SameValue
+          CFI R1 SameValue
+          CFI R2 SameValue
+          CFI R3 SameValue
+          CFI R4 SameValue
+          CFI R5 SameValue
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?BRET_EXT SameValue
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon1
+        
+WDT_Feed            SYMBOL "WDT_Feed"
+??WDT_Feed?relay    SYMBOL "?relay", WDT_Feed
+SPI1_Init           SYMBOL "SPI1_Init"
+??SPI1_Init?relay   SYMBOL "?relay", SPI1_Init
+SPI1_ReadWriteByte  SYMBOL "SPI1_ReadWriteByte"
+??SPI1_ReadWriteByte?relay SYMBOL "?relay", SPI1_ReadWriteByte
+SPI1_SetSpeed       SYMBOL "SPI1_SetSpeed"
+??SPI1_SetSpeed?relay SYMBOL "?relay", SPI1_SetSpeed
+
+        EXTERN ??WDT_Feed?relay
+        FUNCTION ??WDT_Feed?relay,00H
+        EXTERN WDT_Feed
+        FUNCTION WDT_Feed,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+// D:\简宝山\寿县17-09-01 25\程序\无线节点程序\code\Projects\zstack\Samples\SampleApp\Source\hardware\spi.c
+//    1 #include "spi.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,0e8H
+// union <unnamed> volatile __sfr _A_IRCON2
+_A_IRCON2:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f1H
+// unsigned char volatile __sfr PERCFG
+PERCFG:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f4H
+// unsigned char volatile __sfr P1SEL
+P1SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f5H
+// unsigned char volatile __sfr P2SEL
+P2SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f8H
+// union <unnamed> volatile __sfr _A_U1CSR
+_A_U1CSR:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f9H
+// unsigned char volatile __sfr U1DBUF
+U1DBUF:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0faH
+// unsigned char volatile __sfr U1BAUD
+U1BAUD:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fbH
+// unsigned char volatile __sfr U1UCR
+U1UCR:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fcH
+// unsigned char volatile __sfr U1GCR
+U1GCR:
+        DATA8
+        DS 1
+//    2 
+//    3 //SPI1的设定和传输可以参考hal_lcd.c中的LCD控制例子，halLcd_ConfigSPI()
+//    4 
+//    5 //SPI1初始化，波特率=((256+BAUD_M)*2^BAUD_E/2^28)*时钟频率
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//    6 void SPI1_Init(uint8 BAUD_E,uint8 BAUD_M)
+SPI1_Init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function SPI1_Init
+        CODE
+//    7 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//    8   //I/O口配置
+//    9   PERCFG|=1<<1;  //USART1(SPI1)使用位置2（位于P1口)，
+        ORL     0xf1,#0x2
+//   10                  //主模式只使用P1_5，P1_6，P1_7引脚,其中P1_5为CLK，P1_6为MOSI，P1_7为MISO
+//   11   P1SEL|=7<<5;   //配置P1_5，P1_6，P1_7为外设引脚
+        ORL     0xf4,#0xe0
+//   12   //P1SEL&=~0x10;        // P1_4 is GPIO (SSN)
+//   13   //P1DIR|=0x10;         // SSN is set as output //使用P1_4作为软件SSN管理引脚
+//   14   P2SEL|=1<<5;   //USART1优先
+        ORL     0xf5,#0x20
+//   15   
+//   16   //外设配置
+//   17   U1CSR&=~(1<<7); //USART1选择SPI模式
+        CLR     0xf8.7
+//   18   U1CSR&=~(1<<5); //SPI主模式
+        CLR     0xf8.5
+//   19   U1UCR  = 0x80;      /* Flush and goto IDLE state. 8-N-1. */
+        MOV     0xfb,#-0x80
+//   20   U1GCR|=1<<7;  //SPI空闲时SCK线电平状态，CPOL=0时SCK为低电平，CPOL=1时SCK为高电平
+        ORL     0xfc,#0x80
+//   21   U1GCR|=1<<6;  //SPI时钟相位，CPHA=0时MISO在第一个边沿采样，CPHA=1时MISO在第二个边沿采样
+        ORL     0xfc,#0x40
+//   22   U1GCR|=1<<5;  //MSB先传送
+        ORL     0xfc,#0x20
+//   23   
+//   24   //通讯速率设定
+//   25   U1GCR&=0xE0;
+        LCALL   ?Subroutine0 & 0xFFFF
+//   26   U1GCR|=BAUD_E&0x1F;  //BAUD_E
+//   27   U1BAUD=BAUD_M;      //BAUD_M
+//   28  
+//   29   UTX1IF=0;   //USART1 TX中断标志初始设为0
+??CrossCallReturnLabel_0:
+        CLR     0xe8.2
+//   30 }
+        LJMP    ?BRET
+          CFI EndBlock cfiBlock0
+        REQUIRE PERCFG
+        REQUIRE P1SEL
+        REQUIRE P2SEL
+        REQUIRE _A_U1CSR
+        REQUIRE U1UCR
+        REQUIRE U1GCR
+        REQUIRE U1BAUD
+        REQUIRE _A_IRCON2
+//   31 
+//   32 //SPI速率设定，波特率=((256+BAUD_M)*2^BAUD_E/2^28)*时钟频率
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   33 void SPI1_SetSpeed(uint8 BAUD_E,uint8 BAUD_M)
+SPI1_SetSpeed:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function SPI1_SetSpeed
+        CODE
+//   34 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   35   //通讯速率设定
+//   36   U1GCR&=0xE0;
+        LCALL   ?Subroutine0 & 0xFFFF
+//   37   U1GCR|=BAUD_E&0x1F;  //BAUD_E
+//   38   U1BAUD=BAUD_M;      //BAUD_M
+//   39 }
+??CrossCallReturnLabel_1:
+        LJMP    ?BRET
+          CFI EndBlock cfiBlock1
+        REQUIRE U1GCR
+        REQUIRE U1BAUD
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+          CFI Block cfiCond2 Using cfiCommon0
+          CFI Function SPI1_Init
+          CFI Conditional ??CrossCallReturnLabel_0
+          CFI CFA_SP SP+-5
+          CFI Block cfiCond3 Using cfiCommon0
+          CFI (cfiCond3) Function SPI1_SetSpeed
+          CFI (cfiCond3) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond3) CFA_SP SP+-5
+          CFI Block cfiPicker4 Using cfiCommon1
+          CFI (cfiPicker4) NoFunction
+          CFI (cfiPicker4) Picker
+        ANL     0xfc,#0xe0
+        MOV     A,#0x1f
+        ANL     A,R1
+        ORL     0xfc,A
+        MOV     0xfa,R2
+        RET
+          CFI EndBlock cfiCond2
+          CFI EndBlock cfiCond3
+          CFI EndBlock cfiPicker4
+//   40 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   41 uint8 SPI1_ReadWriteByte(uint8 TxData)  //发送一个字节并读取返回数据
+SPI1_ReadWriteByte:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function SPI1_ReadWriteByte
+        CODE
+//   42 {
+        FUNCALL SPI1_ReadWriteByte, WDT_Feed
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     ?V0,R1
+//   43   uint16 retry=0;
+//   44   
+//   45   U1RX_BYTE=0;  //清除接收标志
+        CLR     0xf8.2
+//   46   U1TX_BYTE=0;  //清除发送标志
+        CLR     0xf8.1
+//   47   
+//   48   U1DBUF=TxData;  //写数据到发送缓冲区
+        MOV     0xf9,?V0
+        MOV     R6,#-0x2
+        MOV     R7,#-0x1
+//   49   while(!U1TX_BYTE)  //等待传送完成
+??SPI1_ReadWriteByte_0:
+        MOV     C,0xf8.1
+        JC      ??SPI1_ReadWriteByte_1
+//   50   {
+//   51     retry++;
+//   52     WDT_Feed();  //喂狗
+        ; Setup parameters for call to function WDT_Feed
+        LCALL   ??WDT_Feed?relay     ; Banked call to: WDT_Feed
+//   53     if(retry>=0xFFFE) return 0xFC;  //发送超时退出
+        MOV     A,R6
+        ADD     A,#-0x1
+        DEC     R6
+        MOV     A,R7
+        ADDC    A,#-0x1
+        MOV     R7,A
+        MOV     A,R6
+        ORL     A,R7
+        JNZ     ??SPI1_ReadWriteByte_0
+        MOV     R1,#-0x4
+        SJMP    ??SPI1_ReadWriteByte_2
+//   54   }
+//   55   U1TX_BYTE=0;  //清除发送完成标志
+??SPI1_ReadWriteByte_1:
+        CLR     0xf8.1
+//   56   
+//   57   //cc2530的UxRX_BYTE位只用作UART模式和SPI从模式，不能在SPI主模式中通过它来判断是否接收完成，
+//   58   //SPI主模式把UxBUFF变成了一个doubleBUFF，然后在发送的同时，它就开启了接收，同样使用UxTX_TYTE作为接收完成标志位，
+//   59   //因为速率是匹配的，所以发送完成的时候，接收也就完成了，因此接收时要先发送无效数据提供时钟，等待UxTX_BYTE置位发送完成后直接读取UxDBUF便可
+//   60   
+//   61 /*  retry=0;
+//   62   while(!U1RX_BYTE)  //等待接收数据或回应
+//   63   {
+//   64     retry++;
+//   65     if(retry>=0xFFFE)
+//   66     {
+//   67       return 0xFD;  //接收超时退出
+//   68     }
+//   69   }*/
+//   70   
+//   71   return U1DBUF; //返回接收值
+        MOV     A,0xf9
+        MOV     R1,A
+??SPI1_ReadWriteByte_2:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock5
+        REQUIRE _A_U1CSR
+        REQUIRE U1DBUF
+//   72 }
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SPI1_Init?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    SPI1_Init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SPI1_SetSpeed?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    SPI1_SetSpeed
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SPI1_ReadWriteByte?relay:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    SPI1_ReadWriteByte
+
+        END
+//   73 
+//   74 
+//   75 
+//   76 
+//   77 
+// 
+// 101 bytes in segment BANKED_CODE
+//  18 bytes in segment BANK_RELAYS
+//   9 bytes in segment SFR_AN
+// 
+// 119 bytes of CODE memory
+//   0 bytes of DATA memory (+ 9 bytes shared)
+//
+//Errors: none
+//Warnings: none

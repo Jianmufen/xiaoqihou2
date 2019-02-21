@@ -1,0 +1,402 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.30.1.41636 for 8051             15/Oct/2017  11:48:33 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  D:\简宝山\寿县17-09-01 25\程序\无线节点程序\code\P #
+#                          rojects\zstack\Samples\SampleApp\Source\hardware\s #
+#                          pi.c                                               #
+#    Command line       =  -f "D:\简宝山\寿县17-09-01                         #
+#                          25\程序\无线节点程序\code\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEnde #
+#                          v.cfg" (-DCPU32MHZ -DROOT=__near_func              #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "D:\简宝山\寿县17-09-01     #
+#                          25\程序\无线节点程序\code\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConf #
+#                          ig.cfg" (-DZIGBEEPRO -DSECURE=0                    #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "D:\简宝山\寿县17-09-01     #
+#                          25\程序\无线节点程序\code\Projects\zstack\Samples\ #
+#                          SampleApp\Source\hardware\spi.c" -D NWK_AUTO_POLL  #
+#                          -D ZTOOL_P1 -D xMT_TASK -D xMT_SYS_FUNC -D         #
+#                          xMT_ZDO_FUNC -D xLCD_SUPPORTED=DEBUG -lC           #
+#                          "D:\简宝山\寿县17-09-01 25\程序\无线节点程序\code\ #
+#                          Projects\zstack\Samples\SampleApp\CC2530DB\EndDevi #
+#                          ceEB\List\" -lA "D:\简宝山\寿县17-09-01            #
+#                          25\程序\无线节点程序\code\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\EndDeviceEB\List\"              #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "D:\简宝山\寿县17-09-01 25\程序\无线节点程序\code\ #
+#                          Projects\zstack\Samples\SampleApp\CC2530DB\EndDevi #
+#                          ceEB\Obj\" -e --no_code_motion --debug             #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 8 -I "D:\简宝山\寿县17-09-01     #
+#                          25\程序\无线节点程序\code\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\" -I "D:\简宝山\寿县17-09-01    #
+#                          25\程序\无线节点程序\code\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\Source\" -I                  #
+#                          "D:\简宝山\寿县17-09-01 25\程序\无线节点程序\code\ #
+#                          Projects\zstack\Samples\SampleApp\CC2530DB\..\Sour #
+#                          ce\hardware\" -I "D:\简宝山\寿县17-09-01           #
+#                          25\程序\无线节点程序\code\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\..\..\ZMain\TI2530DB\" -I    #
+#                          "D:\简宝山\寿县17-09-01 25\程序\无线节点程序\code\ #
+#                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\. #
+#                          .\..\..\Components\hal\include\" -I                #
+#                          "D:\简宝山\寿县17-09-01 25\程序\无线节点程序\code\ #
+#                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\. #
+#                          .\..\..\Components\hal\target\CC2530EB\" -I        #
+#                          "D:\简宝山\寿县17-09-01 25\程序\无线节点程序\code\ #
+#                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\. #
+#                          .\..\..\Components\mac\include\" -I                #
+#                          "D:\简宝山\寿县17-09-01 25\程序\无线节点程序\code\ #
+#                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\. #
+#                          .\..\..\Components\mac\high_level\" -I             #
+#                          "D:\简宝山\寿县17-09-01 25\程序\无线节点程序\code\ #
+#                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\. #
+#                          .\..\..\Components\mac\low_level\srf04\" -I        #
+#                          "D:\简宝山\寿县17-09-01 25\程序\无线节点程序\code\ #
+#                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\. #
+#                          .\..\..\Components\mac\low_level\srf04\single_chip #
+#                          \" -I "D:\简宝山\寿县17-09-01                      #
+#                          25\程序\无线节点程序\code\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\..\..\..\..\Components\mt\"  #
+#                          -I "D:\简宝山\寿县17-09-01                         #
+#                          25\程序\无线节点程序\code\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\..\..\..\..\Components\osal\ #
+#                          include\" -I "D:\简宝山\寿县17-09-01               #
+#                          25\程序\无线节点程序\code\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\..\..\..\..\Components\servi #
+#                          ces\saddr\" -I "D:\简宝山\寿县17-09-01             #
+#                          25\程序\无线节点程序\code\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\..\..\..\..\Components\servi #
+#                          ces\sdata\" -I "D:\简宝山\寿县17-09-01             #
+#                          25\程序\无线节点程序\code\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\..\..\..\..\Components\stack #
+#                          \af\" -I "D:\简宝山\寿县17-09-01                   #
+#                          25\程序\无线节点程序\code\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\..\..\..\..\Components\stack #
+#                          \nwk\" -I "D:\简宝山\寿县17-09-01                  #
+#                          25\程序\无线节点程序\code\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\..\..\..\..\Components\stack #
+#                          \sapi\" -I "D:\简宝山\寿县17-09-01                 #
+#                          25\程序\无线节点程序\code\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\..\..\..\..\Components\stack #
+#                          \sec\" -I "D:\简宝山\寿县17-09-01                  #
+#                          25\程序\无线节点程序\code\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\..\..\..\..\Components\stack #
+#                          \sys\" -I "D:\简宝山\寿县17-09-01                  #
+#                          25\程序\无线节点程序\code\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\..\..\..\..\Components\stack #
+#                          \zdo\" -I "D:\简宝山\寿县17-09-01                  #
+#                          25\程序\无线节点程序\code\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\..\..\..\..\Components\zmac\ #
+#                          " -I "D:\简宝山\寿县17-09-01                       #
+#                          25\程序\无线节点程序\code\Projects\zstack\Samples\ #
+#                          SampleApp\CC2530DB\..\..\..\..\..\Components\zmac\ #
+#                          f8w\" -Ohz --require_prototypes                    #
+#    List file          =  D:\简宝山\寿县17-09-01 25\程序\无线节点程序\code\P #
+#                          rojects\zstack\Samples\SampleApp\CC2530DB\EndDevic #
+#                          eEB\List\spi.lst                                   #
+#    Object file        =  D:\简宝山\寿县17-09-01 25\程序\无线节点程序\code\P #
+#                          rojects\zstack\Samples\SampleApp\CC2530DB\EndDevic #
+#                          eEB\Obj\spi.r51                                    #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\简宝山\寿县17-09-01 25\程序\无线节点程序\code\Projects\zstack\Samples\SampleApp\Source\hardware\spi.c
+      1          #include "spi.h"
+
+   \                                 In  segment SFR_AN, at 0xe8
+   \   union <unnamed> volatile __sfr _A_IRCON2
+   \                     _A_IRCON2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf1
+   \   unsigned char volatile __sfr PERCFG
+   \                     PERCFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf5
+   \   unsigned char volatile __sfr P2SEL
+   \                     P2SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf8
+   \   union <unnamed> volatile __sfr _A_U1CSR
+   \                     _A_U1CSR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf9
+   \   unsigned char volatile __sfr U1DBUF
+   \                     U1DBUF:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfa
+   \   unsigned char volatile __sfr U1BAUD
+   \                     U1BAUD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfb
+   \   unsigned char volatile __sfr U1UCR
+   \                     U1UCR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfc
+   \   unsigned char volatile __sfr U1GCR
+   \                     U1GCR:
+   \   000000                DS 1
+      2          
+      3          //SPI1的设定和传输可以参考hal_lcd.c中的LCD控制例子，halLcd_ConfigSPI()
+      4          
+      5          //SPI1初始化，波特率=((256+BAUD_M)*2^BAUD_E/2^28)*时钟频率
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      6          void SPI1_Init(uint8 BAUD_E,uint8 BAUD_M)
+   \                     SPI1_Init:
+      7          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+      8            //I/O口配置
+      9            PERCFG|=1<<1;  //USART1(SPI1)使用位置2（位于P1口)，
+   \   000000   43F102       ORL     0xf1,#0x2
+     10                           //主模式只使用P1_5，P1_6，P1_7引脚,其中P1_5为CLK，P1_6为MOSI，P1_7为MISO
+     11            P1SEL|=7<<5;   //配置P1_5，P1_6，P1_7为外设引脚
+   \   000003   43F4E0       ORL     0xf4,#0xe0
+     12            //P1SEL&=~0x10;        // P1_4 is GPIO (SSN)
+     13            //P1DIR|=0x10;         // SSN is set as output //使用P1_4作为软件SSN管理引脚
+     14            P2SEL|=1<<5;   //USART1优先
+   \   000006   43F520       ORL     0xf5,#0x20
+     15            
+     16            //外设配置
+     17            U1CSR&=~(1<<7); //USART1选择SPI模式
+   \   000009   C2FF         CLR     0xf8.7
+     18            U1CSR&=~(1<<5); //SPI主模式
+   \   00000B   C2FD         CLR     0xf8.5
+     19            U1UCR  = 0x80;      /* Flush and goto IDLE state. 8-N-1. */
+   \   00000D   75FB80       MOV     0xfb,#-0x80
+     20            U1GCR|=1<<7;  //SPI空闲时SCK线电平状态，CPOL=0时SCK为低电平，CPOL=1时SCK为高电平
+   \   000010   43FC80       ORL     0xfc,#0x80
+     21            U1GCR|=1<<6;  //SPI时钟相位，CPHA=0时MISO在第一个边沿采样，CPHA=1时MISO在第二个边沿采样
+   \   000013   43FC40       ORL     0xfc,#0x40
+     22            U1GCR|=1<<5;  //MSB先传送
+   \   000016   43FC20       ORL     0xfc,#0x20
+     23            
+     24            //通讯速率设定
+     25            U1GCR&=0xE0;
+   \   000019   12....       LCALL   ?Subroutine0 & 0xFFFF
+     26            U1GCR|=BAUD_E&0x1F;  //BAUD_E
+     27            U1BAUD=BAUD_M;      //BAUD_M
+     28           
+     29            UTX1IF=0;   //USART1 TX中断标志初始设为0
+   \                     ??CrossCallReturnLabel_0:
+   \   00001C   C2EA         CLR     0xe8.2
+     30          }
+   \   00001E   02....       LJMP    ?BRET
+   \   000021                REQUIRE PERCFG
+   \   000021                REQUIRE P1SEL
+   \   000021                REQUIRE P2SEL
+   \   000021                REQUIRE _A_U1CSR
+   \   000021                REQUIRE U1UCR
+   \   000021                REQUIRE U1GCR
+   \   000021                REQUIRE U1BAUD
+   \   000021                REQUIRE _A_IRCON2
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   53FCE0       ANL     0xfc,#0xe0
+   \   000003   741F         MOV     A,#0x1f
+   \   000005   59           ANL     A,R1
+   \   000006   42FC         ORL     0xfc,A
+   \   000008   8AFA         MOV     0xfa,R2
+   \   00000A   22           RET
+     31          
+     32          //SPI速率设定，波特率=((256+BAUD_M)*2^BAUD_E/2^28)*时钟频率
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     33          void SPI1_SetSpeed(uint8 BAUD_E,uint8 BAUD_M)
+   \                     SPI1_SetSpeed:
+     34          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     35            //通讯速率设定
+     36            U1GCR&=0xE0;
+   \   000000   12....       LCALL   ?Subroutine0 & 0xFFFF
+     37            U1GCR|=BAUD_E&0x1F;  //BAUD_E
+     38            U1BAUD=BAUD_M;      //BAUD_M
+     39          }
+   \                     ??CrossCallReturnLabel_1:
+   \   000003   02....       LJMP    ?BRET
+   \   000006                REQUIRE U1GCR
+   \   000006                REQUIRE U1BAUD
+     40          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     41          uint8 SPI1_ReadWriteByte(uint8 TxData)  //发送一个字节并读取返回数据
+   \                     SPI1_ReadWriteByte:
+     42          {
+   \   000000                REQUIRE ?V0
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0,R1
+     43            uint16 retry=0;
+     44            
+     45            U1RX_BYTE=0;  //清除接收标志
+   \   000007   C2FA         CLR     0xf8.2
+     46            U1TX_BYTE=0;  //清除发送标志
+   \   000009   C2F9         CLR     0xf8.1
+     47            
+     48            U1DBUF=TxData;  //写数据到发送缓冲区
+   \   00000B   85..F9       MOV     0xf9,?V0
+   \   00000E   7EFE         MOV     R6,#-0x2
+   \   000010   7FFF         MOV     R7,#-0x1
+     49            while(!U1TX_BYTE)  //等待传送完成
+   \                     ??SPI1_ReadWriteByte_0:
+   \   000012   A2F9         MOV     C,0xf8.1
+   \   000014   4013         JC      ??SPI1_ReadWriteByte_1
+     50            {
+     51              retry++;
+     52              WDT_Feed();  //喂狗
+   \   000016                ; Setup parameters for call to function WDT_Feed
+   \   000016   12....       LCALL   ??WDT_Feed?relay     ; Banked call to: WDT_Feed
+     53              if(retry>=0xFFFE) return 0xFC;  //发送超时退出
+   \   000019   EE           MOV     A,R6
+   \   00001A   24FF         ADD     A,#-0x1
+   \   00001C   1E           DEC     R6
+   \   00001D   EF           MOV     A,R7
+   \   00001E   34FF         ADDC    A,#-0x1
+   \   000020   FF           MOV     R7,A
+   \   000021   EE           MOV     A,R6
+   \   000022   4F           ORL     A,R7
+   \   000023   70ED         JNZ     ??SPI1_ReadWriteByte_0
+   \   000025   79FC         MOV     R1,#-0x4
+   \   000027   8005         SJMP    ??SPI1_ReadWriteByte_2
+     54            }
+     55            U1TX_BYTE=0;  //清除发送完成标志
+   \                     ??SPI1_ReadWriteByte_1:
+   \   000029   C2F9         CLR     0xf8.1
+     56            
+     57            //cc2530的UxRX_BYTE位只用作UART模式和SPI从模式，不能在SPI主模式中通过它来判断是否接收完成，
+     58            //SPI主模式把UxBUFF变成了一个doubleBUFF，然后在发送的同时，它就开启了接收，同样使用UxTX_TYTE作为接收完成标志位，
+     59            //因为速率是匹配的，所以发送完成的时候，接收也就完成了，因此接收时要先发送无效数据提供时钟，等待UxTX_BYTE置位发送完成后直接读取UxDBUF便可
+     60            
+     61          /*  retry=0;
+     62            while(!U1RX_BYTE)  //等待接收数据或回应
+     63            {
+     64              retry++;
+     65              if(retry>=0xFFFE)
+     66              {
+     67                return 0xFD;  //接收超时退出
+     68              }
+     69            }*/
+     70            
+     71            return U1DBUF; //返回接收值
+   \   00002B   E5F9         MOV     A,0xf9
+   \   00002D   F9           MOV     R1,A
+   \                     ??SPI1_ReadWriteByte_2:
+   \   00002E   7F01         MOV     R7,#0x1
+   \   000030   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000033                REQUIRE _A_U1CSR
+   \   000033                REQUIRE U1DBUF
+     72          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SPI1_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SPI1_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SPI1_SetSpeed?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SPI1_SetSpeed
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SPI1_ReadWriteByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SPI1_ReadWriteByte
+     73          
+     74          
+     75          
+     76          
+     77          
+
+   Maximum stack usage in bytes:
+
+   XSTACK Function
+   ------ --------
+      0   SPI1_Init
+      9   SPI1_ReadWriteByte
+        9   -> WDT_Feed
+      0   SPI1_SetSpeed
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ??SPI1_Init?relay
+       6  ??SPI1_ReadWriteByte?relay
+       6  ??SPI1_SetSpeed?relay
+      11  ?Subroutine0
+       1  P1SEL
+       1  P2SEL
+       1  PERCFG
+      33  SPI1_Init
+      51  SPI1_ReadWriteByte
+       6  SPI1_SetSpeed
+       1  U1BAUD
+       1  U1DBUF
+       1  U1GCR
+       1  U1UCR
+       1  _A_IRCON2
+       1  _A_U1CSR
+
+ 
+ 101 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+   9 bytes in segment SFR_AN
+ 
+ 119 bytes of CODE memory
+   0 bytes of DATA memory (+ 9 bytes shared)
+
+Errors: none
+Warnings: none
